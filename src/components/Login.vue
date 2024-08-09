@@ -16,9 +16,9 @@
         <div class="submit-button mt-4">
           <button type="submit" class="bg-[#35a186] w-full text-white py-2 text-center rounded">Continue to Learn</button>
         </div>
-        <div class="mt-4">
+        <div class="mt-4 flex gap-2">
           <p>Don't have an account yet?</p>
-          <router-link class="nav-link" :to="{name: 'login'}">sign up</router-link>
+          <router-link class="nav-link text-[#35a186]" :to="{name: 'register'}">sign up</router-link>
         </div>
       </form>
     </div>

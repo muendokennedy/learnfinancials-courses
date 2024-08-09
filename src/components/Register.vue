@@ -1,6 +1,7 @@
 <script setup>
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import axios from 'axios'
+import { useRouter } from 'vue-router'
 
 const form = reactive({
   name: null,
@@ -8,22 +9,40 @@ const form = reactive({
   password: null
 })
 
-const REGISTER_URL = 'https://dev-api.bitbytebinary.com/api/v1/partner/add-user'
+// const courses = ref([])
+
+const router = useRouter()
+
+const axiosInstance = axios.create({
+    baseURL: 'https://dev-api.bitbytebinary.com',
+    httpsAgent: new https.Agent({
+        rejectUnauthorized: false
+    })
+});
+
+const REGISTER_URL = '/api/v1/partner/add-user'
 
 const register = async () => {
   console.log(form.name)
   try {
-    const response = await axios.post(REGISTER_URL, {
+    const response = await axiosInstance.post(REGISTER_URL, {
       name: form.name,
       email: form.email,
       password: form.password
     })
-    console.log(response)
+    if(response){
+
+      router.push({
+        name: 'courseAbout',
+        query: {
+          email: form.email
+        }
+      })
+    }
   } catch (error) {
     console.log(error)
   }
 }
-
 
 </script>
 <template>

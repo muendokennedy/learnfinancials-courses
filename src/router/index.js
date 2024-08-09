@@ -9,7 +9,7 @@ const routes = [
   },
   {
     path: '/register',
-    name: 'registerView',
+    name: 'register',
     component: () => import('@/views/RegisterView.vue')
   },
   {
@@ -21,6 +21,11 @@ const routes = [
     path: '/about',
     name: 'courseAbout',
     component: () => import('@/views/CourseAboutView.vue')
+  },
+  {
+    path: '/course/details',
+    name: 'courseDetails',
+    component: () => import('@/views/CourseDetailsView.vue')
   }
 ]
 
