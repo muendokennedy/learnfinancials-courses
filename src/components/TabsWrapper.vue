@@ -16,7 +16,7 @@ provide('selectedTitle', selectedTitle)
 <template>
   <div class="tabs">
     <ul class="tabs-header flex gap-2">
-      <li class="font-bold py-2 border-b-2 cursor-pointer" :class="[title == selectedTitle ? 'border-blue-500' : '']" @click="selectedTitle = title" v-for="title in tabTitles" :key="title">{{ title }}</li>
+      <li class="font-bold py-2 border-b-2 cursor-pointer" :class="[title == selectedTitle ? 'border-[#35a186]' : '']" @click="selectedTitle = title" v-for="title in tabTitles" :key="title">{{ title }}</li>
     </ul>
   </div>
   <slot/>
