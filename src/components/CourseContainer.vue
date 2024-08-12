@@ -3,9 +3,9 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-router.push({
-  name: 'courseDetails'
-})
+// router.push({
+//   name: 'courseDetails'
+// })
 </script>
 
 <template>
@@ -15,7 +15,7 @@ router.push({
             <div class="image h-auto w-full">
                 <img class="w-full h-full" src="https://bbb-main.blr1.digitaloceanspaces.com/uploads/course/java-programming-1720530717882.jpeg" alt="">
             </div>
-            <p class="text-sm py-2">You will learn the fundamentals of Java programming, including object-oriented programming concepts, data structures, algorithms, and design patterns.</p>
+            <p class="text-xs py-2">You will learn the fundamentals of Java programming, including object-oriented programming concepts, data structures, algorithms, and design patterns.</p>
             <div>
                 <button class="bg-[#35a186] text-white py-2 rounded px-4" @click="seeCourseDetails">Read More</button>
             </div>

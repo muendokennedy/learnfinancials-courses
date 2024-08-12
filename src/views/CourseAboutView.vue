@@ -12,7 +12,7 @@ const route = useRoute()
 // const courses = ref([])
 
 onMounted( async () => {
-  await getCourses()
+ await getCourses()
 })
 
 const getCourses = async () => {

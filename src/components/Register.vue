@@ -13,25 +13,18 @@ const form = reactive({
 
 const router = useRouter()
 
-const axiosInstance = axios.create({
-    baseURL: 'https://dev-api.bitbytebinary.com',
-    httpsAgent: new https.Agent({
-        rejectUnauthorized: false
-    })
-});
+const REGISTER_URL = 'https://dev-api.bitbytebinary.com/api/v1/partner/add-user'
 
-const REGISTER_URL = '/api/v1/partner/add-user'
 
 const register = async () => {
   console.log(form.name)
   try {
-    const response = await axiosInstance.post(REGISTER_URL, {
+    const response = await axios.post(REGISTER_URL, {
       name: form.name,
       email: form.email,
       password: form.password
     })
     if(response){
-
       router.push({
         name: 'courseAbout',
         query: {
