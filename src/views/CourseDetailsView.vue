@@ -5,6 +5,7 @@ import Tab from '@/components/Tab.vue'
 import TabsWrapper from '@/components/TabsWrapper.vue'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 import { CheckCircleIcon } from '@heroicons/vue/24/outline'
+import CheckoutModal from '@/components/CheckoutModal.vue'
 
 const div1 = ref(null)
 const div2 = ref(null)
@@ -45,6 +46,8 @@ const toggleDivContentDisplay5 = () => {
   }
 }
 
+const showCheckoutModal = ref(false)
+
 const content = "Niteesh is a driven and dedicated computer science student, currently pursuing his Bachelor's degree at the Indian Institute of Technology Dharwad. With a passion for coding, Niteesh has developed a strong skill set in a variety of programming languages, including Java, Python, C, C++, and JavaScript, among others.\r\nThroughout his academic pursuits, Niteesh has demonstrated a keen aptitude for software development, and is committed to staying up-to-date with the latest trends and technologies in the field. He is a motivated self-starter who enjoys taking on new challenges and solving complex problems.\r\nIn addition to his academic pursuits, Niteesh is an active learner who is constantly seeking out opportunities to expand his knowledge and develop his skills. He is always eager to take on new projects and collaborate with others to achieve success. His expertise in Python and Java make him the right person to tutor students registered with Bit Byte Binary."
 
 let learnings = 'OOPs ,Generics ,Collections,Exception Handling ,Control Flow and Data Flow,Methods,String,If-else (conditions),Iterations,JDBC'
@@ -76,7 +79,8 @@ learnings = learnings.split(',')
         <div>
           <span>Discounted price: </span> <span>17999</span>
         </div>
-        <button class="bg-[#35a186] text-white mt-3 py-2 rounded px-4">Get course</button>
+        <button @click="showCheckoutModal = true" class="bg-[#35a186] text-white mt-3 py-2 rounded px-4">Get course</button>
+        <CheckoutModal v-model="showCheckoutModal"/>
       </div>
     </div>
     <div class="course-about">
